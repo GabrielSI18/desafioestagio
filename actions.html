@@ -18,11 +18,11 @@
             const urlAjax = "https://api.iextrading.com/1.0/stock/" + $("#simboloAcao").val() + "/quote";
             fetch(urlAjax)
                 .then(function(respost) {
-                    const result = respost.json().then(function() {
-                        document.body.insertAdjacentHTML('beforeend', e.companyName);
-                        document.body.insertAdjacentHTML('beforeend', e.latestPrice);
-                    }
-                }
+                    const result = respost.json().then(function(e) {
+                        document.body.insertAdjacentHTML('beforeend', '<br><strong>' + e.companyName + '</strong>');
+                        document.body.insertAdjacentHTML('beforeend', '<br>Valor da ação: ' + e.latestPrice);
+                    })
+                })
         }        
     </script>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio Estágio</title>
+</head>
+
+    <input type="text" id="simboloAcao" placeholder="Símbolo da ação">
+    <input type="button" onclick="ajaxFunc()" id="enviar" value="Enviar">
+
+<body>
+</body>
+    <script>
+        function ajaxFunc() {
+            const urlAjax = "https://api.iextrading.com/1.0/stock/" + $("#simboloAcao").val() + "/quote";
+            fetch(urlAjax)
+                .then(function(respost) {
+                    const result = respost.json().then(function() {
+                        document.body.insertAdjacentHTML('beforeend', e.companyName);
+                        document.body.insertAdjacentHTML('beforeend', e.latestPrice);
+                    }
+                }
+        }        
+    </script>
+</html>
